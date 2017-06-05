@@ -1,4 +1,3 @@
-var path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
 var jexpress = require('jdash-express').default;
@@ -10,7 +9,7 @@ var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'www')));
+app.use(express.static(path.join(__dirname, '/')));
 
 // create a router for jdash
 var jdashRoutes = express.Router();
