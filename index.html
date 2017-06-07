@@ -47,15 +47,9 @@
 <script>
     jdash.ready(function () {
 
-
-
         jdash.Provider = new jdash.ProviderTypes.OnPremise({ url: '/jdash/api/v1' }); // define your end point
 
-        jdash.Provider.init({
-            userToken: function (callback) {
-                callback(null, 'authorization token If Will Be Used');
-            }
-        });
+        createDashboardList();
 
         document.querySelector('#createDashboardBtn').addEventListener('click', function () {
             var title = window.prompt('Set a title for new dashboard');
@@ -65,6 +59,7 @@
                 title: title
             }).then(function (result) {
                 console.log('Dashboard created with id:' + result.id);
+                createDashboardList();
                 dashboard.load(result.id);
             }).catch(function (err) {
                 alert('There was an error creating dashboard: ' + err.message || err)
