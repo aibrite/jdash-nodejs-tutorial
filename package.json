@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/aibrite/jdash-nodejs-tutorial#readme",
   "dependencies": {
-    "jdash-express": "^1.0.0",
+    "jdash-express": "^1.0.1",
     "jdash-mongodb": "^1.0.1",
     "jdash-ui": "^1.0.0"
   }
