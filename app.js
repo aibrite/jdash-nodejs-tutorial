@@ -25,12 +25,14 @@ connStr = 'mongodb://localhost:27017/jdash-demo';
 
 var connection = mongoose.createConnection(connStr);
 
+// Configure JDash when database connection is ready.
 connection.on('connected', function () {
     console.log('Connected to JDash Demo Mongo Database.')
+    // Configure jexpress with principal and provider
     jexpress({
         principal: function (request) {
             return {
-                user: request.user.id, // username which makes this request
+                user: 'current-user', // username which makes this request
                 appid: "myapp" // application id of this app
             }
         },
