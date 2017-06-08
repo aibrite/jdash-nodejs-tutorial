@@ -18,7 +18,7 @@ var mongoose = require('mongoose');
 var jmongo = require('jdash-mongodb').default;
 
 var connStr = 'Your connection string goes here';
-connStr = 'mongodb://localhost:27017/jdash-local';
+connStr = 'mongodb://localhost:27017/jdash-demo';
 
 
 
@@ -26,6 +26,7 @@ connStr = 'mongodb://localhost:27017/jdash-local';
 var connection = mongoose.createConnection(connStr);
 
 connection.on('connected', function () {
+    console.log('Connected to JDash Demo Mongo Database.')
     jexpress({
         principal: function (request) {
             return {
@@ -46,5 +47,5 @@ app.use('/jdash/api/v1', jdashRoutes);
 
 
 app.listen(3001, function () {
-
+    console.log('JDash Demo App launched.')
 })
