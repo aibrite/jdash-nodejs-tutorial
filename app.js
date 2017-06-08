@@ -4,14 +4,14 @@ var jexpress = require('jdash-express').default;
 
 
 
-
+// Create an App
 var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname));
 
-// create a router for jdash
+// Create a router for jdash
 var jdashRoutes = express.Router();
 
 var mongoose = require('mongoose');
@@ -25,6 +25,7 @@ connStr = 'mongodb://localhost:27017/jdash-demo';
 
 var connection = mongoose.createConnection(connStr);
 
+// jexpress acts as a middleware for specified route.
 // Configure JDash when database connection is ready.
 connection.on('connected', function () {
     console.log('Connected to JDash Demo Mongo Database.')
