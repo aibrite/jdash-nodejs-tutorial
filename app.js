@@ -18,7 +18,7 @@ var mongoose = require('mongoose');
 var jmongo = require('jdash-mongodb').default;
 
 var connStr = 'Your connection string goes here';
-//connStr = 'mongodb://localhost:27017/jdash-local';
+connStr = 'mongodb://localhost:27017/jdash-demo';
 
 
 var connection = mongoose.createConnection(connStr);
