@@ -19,6 +19,6 @@
   "dependencies": {
     "jdash-express": "^1.0.1",
     "jdash-mongodb": "^1.0.1",
-    "jdash-ui": "^1.0.0"
+    "jdash-ui": "^1.0.4"
   }
 }
